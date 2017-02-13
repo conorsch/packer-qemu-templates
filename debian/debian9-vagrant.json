@@ -45,6 +45,10 @@
                    "passwd/username={{user `user`}} ",
 
                    "<enter>"
+            ],
+            "qemuargs": [
+                [ "-netdev", "user,hostfwd=tcp::{{ .SSHHostPort }}-:22,id=user.0,ipv4"],
+                [ "-device", "virtio-net,netdev=user.0"]
             ]
         }
     ],
