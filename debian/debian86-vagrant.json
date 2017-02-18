@@ -1,5 +1,6 @@
 {
     "variables": {
+        "boxname": "debian86-vagrant",
         "user": "vagrant",
         "password": "vagrant",
         "disk_size": "100000",
@@ -9,7 +10,7 @@
     "builders":
     [
         {
-            "name": "debian86-vagrant",
+            "name": "{{ user `boxname` }}",
 
             "type": "qemu",
             "format": "qcow2",
@@ -65,7 +66,7 @@
     "post-processors": [
         {
             "keep_input_artifact": false,
-            "output": "box/debian86-vagrant.box",
+            "output": "box/{{ user `boxname` }}.box",
             "type": "vagrant"
         }
     ]
