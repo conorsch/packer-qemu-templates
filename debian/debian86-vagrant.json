@@ -9,7 +9,7 @@
     "builders":
     [
         {
-            "name": "debian83-vagrant",
+            "name": "debian86-vagrant",
 
             "type": "qemu",
             "format": "qcow2",
